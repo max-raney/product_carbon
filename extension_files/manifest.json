@@ -7,6 +7,9 @@
         "default_popup": "ProductCarbon.html",
         "default_icon": "logo.png"
     },
+    "icons": {
+        "128": "logo.png"
+      },
     "content_scripts": [    {
         "js": ["scripts/content.js"],
         "matches": [
