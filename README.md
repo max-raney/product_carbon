@@ -1,4 +1,13 @@
 # product_carbon
 
-About the Project
-The Carbon Footprint Calculator is a browser extension designed to empower consumers with immediate insights into the environmental impact of their purchases. By evaluating products based on price, gross revenue, and company-specific emissions data, this tool calculates and displays the carbon footprint associated with each product as you shop online. Our mission is to promote sustainable purchasing decisions by making carbon emissions data accessible and understandable to everyone.
+project description:
+    project carbon is a browser extension that lets the user know the carbon emissions per dollar associated with an online product using a database of carbon emissions and gross revenue of major companies
+
+how to install and run
+    --
+
+how to use
+    --
+
+credits
+    --
