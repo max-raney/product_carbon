@@ -8,7 +8,9 @@
     "<all_urls>"
     ],
     "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "default_icon": {
+        "48": "images/logo.png"
     },
     "action": {
         "default_popup": "popup.html"
