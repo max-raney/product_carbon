@@ -22,9 +22,4 @@ const article = document.querySelector("article");
   badge.classList.add("color-secondary-text", "type--caption");
   badge.textContent = `This product costs ${price} from ${manufacturer} and produces roughly ${productEmissions} kgs of carbon emissions.`;
 
-  // Support for API reference docs
-  const heading = article.querySelector("h1");
-  // Support for article docs with date
-  const date = article.querySelector("time")?.parentNode;
-
   (date ?? heading).insertAdjacentElement("afterend", badge);
