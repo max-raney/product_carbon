@@ -11,6 +11,7 @@
     "service_worker": "background.js",
     "default_icon": {
         "48": "images/logo.png"
+    }
     },
     "action": {
         "default_popup": "popup.html"
