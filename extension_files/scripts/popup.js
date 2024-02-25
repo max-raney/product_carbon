@@ -11,7 +11,8 @@ document.getElementById('calculate').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('result').textContent = `Emissions for this product are estimated at ${data.emissions} kg of CO2e.`;
-    })    
+        let emissionsRounded = parseFloat(data.emissions).toFixed(2); // Rounds the emissions to 2 decimal places
+        document.getElementById('result').textContent = `Emissions for this product are estimated at ${emissionsRounded} kg of CO2e.`;
+    })
     .catch(error => console.error('Error:', error));
 });
