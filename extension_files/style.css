@@ -1,0 +1,23 @@
+body{
+    background-color: #f6f4e8;
+    width: 300px;
+    text-align: center;
+}
+h1{
+    color:#4a5742;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: lighter;
+}
+div{
+    color:#4a5742;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: lighter;
+}
+script{
+    color:#4a5742;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: lighter;
+}
