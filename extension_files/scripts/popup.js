@@ -1,4 +1,5 @@
 let price = 0.0;
+let brand = '';
 chrome.runtime.sendMessage({ action: 'popupOpened' });
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
@@ -7,20 +8,23 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         const numericPrice = message.price.replace(/[^0-9.]/g, '');
         // Convert the cleaned price string to a float
         price = parseFloat(numericPrice);
+        brand = message.brand
         console.log('Price:', price);
+        console.log('Brand:', brand);
     }
   });
 
 document.getElementById('calculate').addEventListener('click', function() {
     console.log('using price ', price);
-    const company = document.getElementById('company').value;
+    console.log('using brand', brand);
+    
   
     fetch('http://localhost:8080/calculate_emissions', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ company_name: company, price: parseFloat(price), add_amazon: true }),
+        body: JSON.stringify({ company_name: brand, price: parseFloat(price), add_amazon: true }),
     })
     .then(response => response.json())
     .then(data => {
