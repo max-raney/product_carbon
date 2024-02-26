@@ -1,6 +1,19 @@
+let price = 0.0;
+chrome.runtime.sendMessage({ action: 'popupOpened' });
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.price) {
+        // Remove the dollar sign and any commas from the price string
+        const numericPrice = message.price.replace(/[^0-9.]/g, '');
+        // Convert the cleaned price string to a float
+        price = parseFloat(numericPrice);
+        console.log('Price:', price);
+    }
+  });
+
 document.getElementById('calculate').addEventListener('click', function() {
+    console.log('using price ', price);
     const company = document.getElementById('company').value;
-    const price = document.getElementById('price').value;
   
     fetch('http://localhost:8080/calculate_emissions', {
         method: 'POST',
