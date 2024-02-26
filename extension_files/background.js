@@ -19,23 +19,19 @@ self.addEventListener('message', (event) => {
     }
   });
 
-// Listen for messages for priceData
+// background.js
+let latestData = {}; // Placeholder for the latest data received from content.js
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'priceData') {
-        // Forward the message to the popup script
-        chrome.runtime.sendMessage(message);
+        // Store the latest price and brand data
+        latestData = { price: message.price, brand: message.brand };
+    }
+
+    if (message.action === 'requestData') {
+        // Respond with the stored data
+        sendResponse(latestData);
     }
 });
 
-// Listen for popup opened
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === 'popupOpened') {
-      console.log('Popup opened');
-    } else {
-      // Forward the message to the content script
-      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-          chrome.tabs.sendMessage(tabs[0].id, message);
-      });
-    }
-  });
   
